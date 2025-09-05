@@ -1,0 +1,23 @@
+[project]
+name = "defi_account_monitor"
+version = "0.1.0"
+description = "defi_account_monitor using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.177.0,<1.0.0"
+]
+
+[project.scripts]
+defi_account_monitor = "defi_account_monitor.main:run"
+run_crew = "defi_account_monitor.main:run"
+train = "defi_account_monitor.main:train"
+replay = "defi_account_monitor.main:replay"
+test = "defi_account_monitor.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

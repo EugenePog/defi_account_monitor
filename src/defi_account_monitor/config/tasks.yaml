@@ -1,0 +1,16 @@
+collect_tokens_task:
+  description: >
+    Conduct a thorough search about all tokens stored on {address} and DeFi protocols that are in use on {address}.
+    Make sure you find actual and relevant information given the current moment is {current_time}.
+    Use the following web pages to get information about tokens on {address}: https://debank.com/profile/{address} and https://etherscan.io/address/{address}
+  expected_output: >
+    A table with all tokens on the given {address} with token name, DeFi protocol where the token used, amount of this tokens descending by token amount.
+  agent: portfolio_collector
+
+reporting_task:
+  description: >
+    Review the information you got and put it into a table based report that covers all assests identified on {address}.
+    Make sure the report is detailed and contains any and all relevant information.
+  expected_output: >
+    A table based report that contains all assests identified on {address} with columns: token name, DeFi protocol, amount
+  agent: reporting_analyst
